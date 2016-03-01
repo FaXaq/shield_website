@@ -13,4 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require libs/retrospect/skel
+//= require libs/retrospect/util
+//= require libs/retrospect/retrospect
 //= require_tree .
