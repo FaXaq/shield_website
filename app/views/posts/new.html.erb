@@ -1,17 +1,21 @@
-<h1>New Post</h1>
-<%= form_for :post, url: posts_path do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
+<section id="new" class="wrapper style1">
+  <h1>New Post</h1>
+  <div class="inner">
+    <%= form_for :post, url: posts_path do |f| %>
+    <div class="row uniform 75%">
+      <div class="12u$">
+        <%= f.text_field :title, placeholder: "Enter the title" %>
+      </div>
+      <div class="12u$">
+        <%= f.text_area :text, placeholder: "Enter the article", rows: 5 %>
+      </div>
+    </div>
+    <ul class="actions">
+      <li>
+        <%= f.submit "Submit",  class: "button special" %>
+      </li>
+    </ul>
+    <% end %>
 
-  <p>
-    <%= f.label :text %><br>
-    <%= f.text_area :text %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-<%= link_to 'Back', posts_path %>
+    <%= render "back" %>
+</section>

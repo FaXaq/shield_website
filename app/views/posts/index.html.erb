@@ -1,16 +1,20 @@
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-  </tr>
-
+<section id="one" class="wrapper style1">
   <% @posts.each do |post| %>
-    <tr>
-      <td><%= post.title %></td>
-      <td><%= post.text %></td>
-      <td><%= link_to 'Show', post %></td>
-    </tr>
+  <div class="inner">
+    <article class="feature left">
+      <div class="content">
+	<h2><%= post.title %></h2>
+	<p><%= post.text %></p>
+	<ul class="actions">
+	  <li>
+	    <%= link_to 'More', post, class: "button alt" %>
+	  </li>
+	</ul>
+      </div>
+    </article>
+  </div>
   <% end %>
-</table>
-
-<%= link_to 'New', new_post_path %>
+  <div class="inner" style="text-align:center;">
+    <%= link_to 'New', new_post_path, class: "button big special" %>
+  </div>
+</section>

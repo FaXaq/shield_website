@@ -1,4 +1,14 @@
-<%= @post.title %>
-<%= @post.text %>
-<%= link_to 'Edit', edit_post_path %>
-<%= link_to 'Back', posts_path %>
+<section id="article" class="wrapper style1">
+  <div class="container">
+    <header class="major special">
+      <h2><%= @post.title %></h2>
+      <h6 style="text-align:left;"><i>Written on</i></h6>
+    </header>
+    <p>
+      <%= @post.text %>
+    </p>
+    <%= link_to 'Edit', edit_post_path, class: "button alt" %>
+
+    <%= render "back" %>
+  </div>
+</section>
