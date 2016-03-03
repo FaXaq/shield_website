@@ -34,5 +34,6 @@
     <% end %>
 
     <%= render "back" %>
+    <%= link_to 'Destroy', @post,  method: :delete, data: { confirm: 'Are you sure?' }, class: "button default" %>
   </div>
 </section>

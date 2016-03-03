@@ -2,7 +2,7 @@
   <div class="container">
     <header class="major special">
       <h2><%= @post.title %></h2>
-      <h6 style="text-align:left;"><i>Written on</i></h6>
+      <h6 style="text-align:left;"><i>Written on <%= @post.created_at %></i></h6>
     </header>
     <p>
       <%= @post.text %>
