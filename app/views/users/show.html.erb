@@ -1,0 +1,16 @@
+<section id="article" class="wrapper style1">
+  <div class="container">
+    <header class="major special">
+      <%= gravatar_for @user %>
+      <h2><%= @user.name %></h2>
+      <h6 style="text-align:left;"><i>User since <%= @user.created_at %></i></h6>
+    </header>
+    <p>
+      <%= @user.email %>
+    </p>
+    <%= link_to 'Edit', edit_user_path, class: "button alt" %>
+    <%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Are you sure?' }, class: "button default" %>
+
+    <%= render "back" %>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+<% provide(:title, 'Sign up') %>
+
+<section id="new" class="wrapper style1">
+  <div class="inner">
+    <h2>New User</h2>
+    <%= render 'error_messages' %>
+    <%= form_for(@user) do |f| %>
+    <div class="row uniform 75%">
+      <div class="6u 12u$(xsmall)">
+        <%= f.text_field :name, placeholder: "Bob" %>
+      </div>
+      <div class="6u$ 12u$(xsmall)">
+        <%= f.email_field :email, placeholder: "is@this.love" %>
+      </div>
+
+      <div class="6u 12u$(xsmall)">
+        <%= f.password_field :password, placeholder: "Password" %>
+      </div>
+
+      <div class="6u$ 12u$(xsmall)">
+        <%= f.password_field :password_confirmation, placeholder: "Password confirmation" %>
+      </div>
+    </div>
+    <ul class="actions">
+      <li>
+        <%= f.submit "Join the horde", class: "button special" %>
+      </li>
+    </ul>
+    <% end %>
+  </div>
+</section>
