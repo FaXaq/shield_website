@@ -10,7 +10,7 @@
     </p>
     <% if @user_posts %>
     <hr/>
-    <h4>User's Posts</h4>
+    <h4><%= @user.name %>'s Posts</h4>
     <% @user_posts.each do |post| %>
     <div class="inner">
       <article class="feature left">

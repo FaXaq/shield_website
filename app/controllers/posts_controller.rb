@@ -17,12 +17,19 @@ class PostsController < ApplicationController
   end
 
   def edit
+    current_user
     @post = Post.find(params[:id])
+
+
+    if logged_in? && @current_user.id === @post.user.id
+
+    else
+      redirect_to @post
+    end
   end
 
   def create
     current_user
-
     @post = Post.new(post_params)
     @post.user_id = @current_user.id
     @post.save
@@ -30,12 +37,17 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
+    current_user
 
-    if @post.update(post_params)
-      redirect_to @post
+    @post = Post.find(params[:id])
+    if logged_in? && @current_user.id === @post.user.id
+      if @post.update(post_params)
+        redirect_to @post
+      else
+        render 'edit'
+      end
     else
-      render 'edit'
+      redirect_to @post
     end
   end
 

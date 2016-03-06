@@ -2,13 +2,14 @@
   <div class="container">
     <header class="major special">
       <h2><%= @post.title %></h2>
-      <h6 style="text-align:left;"><i>Written on <%= @post.created_at %></i></h6>
+      <h5><i>Written on <%= @post.created_at.strftime("%B #{@post.created_at.day.ordinalize}, %Y") %> by <%= @post.user.name %></i></h5>
     </header>
     <p>
       <%= @post.text %>
     </p>
+    <% if logged_in? && @current_user.id === @post.user.id %>
     <%= link_to 'Edit', edit_post_path, class: "button alt" %>
-
+    <% end %>
     <%= render "back" %>
   </div>
 </section>
