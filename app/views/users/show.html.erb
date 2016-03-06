@@ -8,8 +8,10 @@
     <p>
       <%= @user.email %>
     </p>
+    <% if logged_in? && @current_user.id === @user.id %>
     <%= link_to 'Edit', edit_user_path, class: "button alt" %>
     <%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Are you sure?' }, class: "button default" %>
+    <% end %>
 
     <%= render "back" %>
   </div>

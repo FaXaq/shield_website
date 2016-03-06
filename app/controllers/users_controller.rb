@@ -22,15 +22,44 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    if logged_in? && @current_user.id === params[:id].to_f
+      @user = User.find(params[:id])
+    else
+      redirect_to user_path
+    end
+  end
+
+  def update
+    @user = User.find(params[:id])
+
+    if @user.update(user_params)
+      redirect_to @user
+    else
+      if @user.update(user_params_without_password)
+        redirect_to @user
+      else
+        render 'edit'
+      end
+    end
+  end
+
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
-    redirect_to users_path
+    if logged_in? && @current_user.id === params[:id].to_f
+      @user.destroy
+    end
+    redirect_to root_url
   end
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmationx)
+    params.require(:user).permit(:name, :email, :firstname, :lastname,
+                                 :password, :password_confirmation)
+  end
+
+  private
+  def user_params_without_password
+    params.require(:user).permit(:name, :email, :firstname, :lastname)
   end
 end

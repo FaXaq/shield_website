@@ -1,12 +1,23 @@
-<% provide(:title, 'Sign up') %>
-
-<section id="new" class="wrapper style1">
+<section id="edit" class="wrapper style1">
   <div class="inner">
-    <h2>New User</h2>
-    <%= render 'error_messages' %>
-    <%= form_for(@user) do |f| %>
-    <hr>
+    <h2>Editing user : <%= @user.name %></h2>
+
+    <%= form_for :user, url: user_path(@user), method: :patch do |f| %>
     <div class="row uniform 75%">
+      <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@user.errors.count, "error") %> prohibited
+          this article from being saved:
+        </h2>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+      <hr>
+      <% end %>
       <div class="12u$ 12u$(xsmall)">
         <%= f.text_field :name, placeholder: "bobmarlye1945" %>
       </div>
@@ -30,9 +41,14 @@
     </div>
     <ul class="actions">
       <li>
-        <%= f.submit "Join the horde", class: "button special" %>
+        <%= f.submit "Submit", class: "button special" %>
+      </li>
+      <li>
+        <%= link_to 'Destroy', @user,  method: :delete, data: { confirm: 'Are you sure?' }, class: "button default" %>
       </li>
     </ul>
     <% end %>
+
+    <%= render "back" %>
   </div>
 </section>
