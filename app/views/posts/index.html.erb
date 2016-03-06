@@ -4,6 +4,7 @@
     <article class="feature left">
       <div class="content">
 	<h2><%= post.title %></h2>
+        <h5><i>Written on <%= post.created_at.strftime("%B #{post.created_at.day.ordinalize}, %Y") %> by <%= post.user.name %></i></h5>
 	<p><%= post.text %></p>
 	<ul class="actions">
 	  <li>
@@ -14,7 +15,9 @@
     </article>
   </div>
   <% end %>
+  <% if logged_in? %>
   <div class="inner" style="text-align:center;">
     <%= link_to 'New', new_post_path, class: "button big special" %>
   </div>
+  <% end %>
 </section>

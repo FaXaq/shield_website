@@ -1,6 +1,11 @@
 # coding: utf-8
 class PostsController < ApplicationController
   def new
+    if logged_in?
+      @post = Post.new
+    else
+      redirect_to posts_path
+    end
   end
 
   def index
@@ -16,8 +21,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    current_user
 
+    @post = Post.new(post_params)
+    @post.user_id = @current_user.id
     @post.save
     redirect_to @post
   end

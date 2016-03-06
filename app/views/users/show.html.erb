@@ -8,6 +8,26 @@
     <p>
       <%= @user.email %>
     </p>
+    <% if @user_posts %>
+    <hr/>
+    <h4>User's Posts</h4>
+    <% @user_posts.each do |post| %>
+    <div class="inner">
+      <article class="feature left">
+        <div class="content">
+	  <h2><%= post.title %></h2>
+	  <p><%= post.text %></p>
+	  <ul class="actions">
+	    <li>
+	      <%= link_to 'More', post, class: "button alt" %>
+	    </li>
+	  </ul>
+        </div>
+      </article>
+    </div>
+    <% end %>
+    <hr/>
+    <% end %>
     <% if logged_in? && @current_user.id === @user.id %>
     <%= link_to 'Edit', edit_user_path, class: "button alt" %>
     <%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Are you sure?' }, class: "button default" %>
