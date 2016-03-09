@@ -1,36 +1,27 @@
 <section id="article" class="wrapper style1">
   <div class="container">
     <header class="major special">
-      <%= gravatar_for @user %>
+      <%= image_tag @user.avatar.url(:medium), class: "img-circle" %>
       <h2><%= @user.name %></h2>
       <h6 style="text-align:left;"><i>User since <%= @user.created_at %></i></h6>
     </header>
     <p>
       <%= @user.email %>
     </p>
-    <% if @user_posts %>
-    <hr/>
-    <h4><%= @user.name %>'s Posts</h4>
-    <% @user_posts.each do |post| %>
-    <div class="inner">
-      <article class="feature left">
-        <div class="content">
-	  <h2><%= post.title %></h2>
-	  <p><%= post.text %></p>
-	  <ul class="actions">
-	    <li>
-	      <%= link_to 'More', post, class: "button alt" %>
-	    </li>
-	  </ul>
-        </div>
-      </article>
-    </div>
-    <% end %>
-    <hr/>
-    <% end %>
     <% if logged_in? && @current_user.id === @user.id %>
+    <hr/>
     <%= link_to 'Edit', edit_user_path, class: "button alt" %>
     <%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Are you sure?' }, class: "button default" %>
+    <% end %>
+    <% if @user.posts.any? %>
+    <hr/>
+    <h4><%= @user.name %>'s Posts</h4>
+    <% @user_posts.each_with_index do |post, index| %>
+    <%= render "preview_post", post: post, index: index %>
+    <% end %>
+    <% else %>
+    <hr/>
+    <h4><%= @user.name %> has no post yet</h4>
     <% end %>
 
     <%= render "back" %>

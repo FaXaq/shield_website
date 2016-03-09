@@ -1,0 +1,25 @@
+<% if index % 2 === 0 %>
+<article class="feature left">
+<% else %>
+<article class="feature right">
+<% end %>
+<span class="image">
+  <%= image_tag post.avatar.url %>
+</span>
+<div class="content">
+  <span class="thumbnail">
+    <%= image_tag post.user.avatar.url(:thumb), class: "img-circle bordered" %>
+    <h1><%= link_to post.user.name, post.user %></h1>
+  </span>
+  <h6 class="thumbnail-title"> on
+    <%= post.created_at.strftime("%B #{post.created_at.day.ordinalize}, %Y") %>
+  </h6>
+  <h2><%= post.title %></h2>
+  <%= simple_format post.text.first(500), class: "justify" %>
+  <ul class="actions">
+    <li>
+      <%= link_to 'More', post, class: "button alt" %>
+    </li>
+  </ul>
+</div>
+</article>

@@ -19,11 +19,13 @@
       <hr>
       <% end %>
       <div class="12u$">
+        <%= f.label :title %>
         <%= f.text_field :title, placeholder: "Modify title here" %>
       </div>
 
       <div class="12u$">
-        <%= f.text_area :text, placeholder: "Modify text here" %>
+        <%= f.label :text %>
+        <%= f.text_area :text, placeholder: "Modify text here", rows: 10%>
       </div>
     </div>
     <ul class="actions">

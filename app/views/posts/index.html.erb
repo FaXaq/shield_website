@@ -1,18 +1,7 @@
 <section id="one" class="wrapper style1">
-  <% @posts.each do |post| %>
+  <% @posts.each_with_index do |post, index| %>
   <div class="inner">
-    <article class="feature left">
-      <div class="content">
-	<h2><%= post.title %></h2>
-        <h5><i>Written on <%= post.created_at.strftime("%B #{post.created_at.day.ordinalize}, %Y") %> by <%= post.user.name %></i></h5>
-	<p><%= post.text %></p>
-	<ul class="actions">
-	  <li>
-	    <%= link_to 'More', post, class: "button alt" %>
-	  </li>
-	</ul>
-      </div>
-    </article>
+    <%= render "preview_post", post: post, index: index %>
   </div>
   <% end %>
   <% if logged_in? %>

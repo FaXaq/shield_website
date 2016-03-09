@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160306213525) do
+ActiveRecord::Schema.define(version: 20160309133700) do
 
   create_table "post_parts", force: :cascade do |t|
     t.string   "type"
@@ -27,9 +27,13 @@ ActiveRecord::Schema.define(version: 20160306213525) do
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.string   "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "user_id"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "posts", ["created_at"], name: "index_posts_on_created_at"
@@ -38,11 +42,15 @@ ActiveRecord::Schema.define(version: 20160306213525) do
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "password_digest"
     t.string   "firstname"
     t.string   "lastname"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

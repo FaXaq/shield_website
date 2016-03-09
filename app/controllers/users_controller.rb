@@ -36,12 +36,10 @@ class UsersController < ApplicationController
 
     if @user.update(user_params)
       redirect_to @user
-    else
-      if @user.update(user_params_without_password)
+    elsif @user.update(user_params_without_password)
         redirect_to @user
-      else
+    else
         render 'edit'
-      end
     end
   end
 
@@ -56,11 +54,12 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:name, :email, :firstname, :lastname,
-                                 :password, :password_confirmation)
+                                 :password, :password_confirmation,
+                                 :avatar)
   end
 
   private
   def user_params_without_password
-    params.require(:user).permit(:name, :email, :firstname, :lastname)
+    params.require(:user).permit(:name, :email, :firstname, :lastname, :avatar)
   end
 end
