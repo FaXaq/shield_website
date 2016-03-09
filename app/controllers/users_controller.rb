@@ -55,11 +55,12 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :firstname, :lastname,
                                  :password, :password_confirmation,
-                                 :avatar)
+                                 :avatar, :avatar_file_name)
   end
 
   private
   def user_params_without_password
-    params.require(:user).permit(:name, :email, :firstname, :lastname, :avatar)
+    params.require(:user).permit(:name, :email, :firstname, :lastname, :avatar,
+                                 :avatar_file_name)
   end
 end
