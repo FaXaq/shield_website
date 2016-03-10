@@ -1,0 +1,10 @@
+@import "require/skel";
+
+.feature {
+         &.left, &.right {
+                 @include vendor('flex-direction', 'column');
+         }
+         > * {
+                width:100% !important;
+         }
+}
