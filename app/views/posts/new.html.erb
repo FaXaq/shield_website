@@ -4,6 +4,9 @@
     <%= form_for :post, url: posts_path do |f| %>
     <div class="row uniform 75%">
       <div class="12u$">
+        <%= f.file_field  :avatar, as: :file %>
+      </div>
+      <div class="12u$">
         <%= f.text_field :title, placeholder: "Enter the title" %>
       </div>
       <div class="12u$">
