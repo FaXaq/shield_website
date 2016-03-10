@@ -1,6 +1,9 @@
-span.thumbnail {
-               display: inline-block;
-               text-align: center;
+@import "breakpoint";
+@import "require/size";
+
+.thumbnail {
+          display: inline-block;
+          text-align: center;
 }
 
 a.thumbnail {
@@ -9,4 +12,9 @@ a.thumbnail {
 
 .thumbnail-title {
                  display: inline-block;
+}
+
+span.thumbnail-over-image{
+        position: relative;
+        margin-top:-60px;
 }

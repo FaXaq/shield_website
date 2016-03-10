@@ -1,17 +1,5 @@
 <section id="article" class="wrapper style1">
   <div class="container">
-    <header class="major special left">
-      <span class="thumbnail">
-        <%= image_tag @post.user.avatar.url(:thumb), class: "img-circle bordered" %>
-        <h1><%= link_to @post.user.name, @post.user %></h1>
-      </span>
-      <h5 class="thumbnail-title"> on
-        <%= @post.created_at.strftime("%B #{@post.created_at.day.ordinalize}, %Y") %>
-      </h5>
-    </header>
-    <header class="major special">
-      <h2><%= @post.title %></h2>
-    </header>
     <%= simple_format @post.text, class: "justify"  %>
     <% if logged_in? && @current_user.id === @post.user.id %>
     <%= link_to 'Edit', edit_post_path, class: "button alt" %>

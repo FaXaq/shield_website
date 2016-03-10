@@ -19,6 +19,9 @@
       <hr>
       <% end %>
       <div class="12u$">
+        <%= f.file_field  :avatar, as: :file %>
+      </div>
+      <div class="12u$">
         <%= f.label :title %>
         <%= f.text_field :title, placeholder: "Modify title here" %>
       </div>

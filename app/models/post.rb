@@ -3,7 +3,8 @@ class Post < ActiveRecord::Base
   has_many :post_part
 
   validates :title,
-            presence: true
+            presence: true,
+            uniqueness: true
   validates :text,
             presence: true
 
