@@ -1,7 +1,11 @@
-<section id="banner" style="background-image:url('<%= image_path 'banner.png' %>')">
+<section id="banner" style="background-image:url('<%= image_path 'banner.jpg' %>')">
+  <%= inline_svg('logoshield-cercle.svg') %>
   <h2>shield</h2>
-  <p>sup ?</p>
+  <p>RwlRwlRwlRwl</p>
   <ul class="actions">
-    <li><a href="/#resume" class="button big special">Who am I ?</a></li>
+     <li><a href="/#resume" class="button alt">Qui sommes nous</a></li>
+     <li><a href="/#events" class="button alt">Les événements</a></li>
+     <li><%= link_to "Blog", posts_path, class:"button alt" %></li>
+     <li><a href="/#gallery" class="button alt">Photos</a></li>
   </ul>
 </section>

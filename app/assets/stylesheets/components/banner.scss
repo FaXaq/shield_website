@@ -4,13 +4,5 @@
 #banner {
         background-size:cover;
         background-repeat:no-repeat;
-        @include breakpoint($small) {
-                background-size:contain;
-        }
-        @include breakpoint($xsmall) {
-                background-size:contain;
-        }
-        @include breakpoint($medium) {
-                background-size:contain;
-        }
+        background-position:center;
 }

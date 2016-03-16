@@ -1,4 +1,4 @@
-<% if @post === nil %>
+<% if @post === nil || @post.id === nil %>
 <section id="banner" style="background-image:url('<%= image_path 'banner.png' %>');">
   <i class="icon fa-book"></i>
 </section>

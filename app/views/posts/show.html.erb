@@ -1,9 +1,9 @@
 <section id="article" class="wrapper style1">
-  <div class="container">
-    <%= simple_format @post.text, class: "justify"  %>
-    <% if logged_in? && @current_user.id === @post.user.id %>
-    <%= link_to 'Edit', edit_post_path, class: "button alt" %>
-    <% end %>
-    <%= render "back" %>
-  </div>
+   <div class="container justify">
+      <%= markdown @post.text  %>
+      <% if logged_in? && @current_user.id === @post.user.id %>
+      <%= link_to 'Edit', edit_post_path, class: "button alt" %>
+      <% end %>
+      <%= render "back" %>
+   </div>
 </section>

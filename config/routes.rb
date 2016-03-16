@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'post_parts/new'
-
-  get 'sessions/new'
-
-  get 'users/new'
 
   # get 'welcome/index'
 
@@ -18,6 +13,7 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   resources :post_parts
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
