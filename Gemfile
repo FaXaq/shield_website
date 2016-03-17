@@ -35,6 +35,8 @@ gem 'inline_svg'
 
 gem 'redcarpet'
 
+gem 'hermitage'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
