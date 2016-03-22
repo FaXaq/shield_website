@@ -1,0 +1,31 @@
+<section id="new" class="wrapper style1">
+   <div class="inner">
+      <h2>New Photo</h2>
+      <%= render 'error_messages' %>
+      <%= form_for :photo, url: photos_path do |f| %>
+      <div class="row uniform 75%">
+         <div class="12u$">
+            <%= f.file_field :image, as: :file %>
+         </div>
+         <div class="6u">
+            <%= f.text_field :title, placeholder: "Enter the title" %>
+         </div>
+         <div class="6u$">
+            <%= f.text_field :alt, placeholder: "Enter the alternative text if image not available" %>
+         </div>
+         <div class="12u$">
+            <%= f.select :gallery_id, options_from_collection_for_select(Gallery.all, "id", "title"), placeholder:"Gallery" %>
+         </div>
+         <div class="12u$">
+            <%= f.text_area :description, placeholder: "Enter the description", rows: 5 %>
+         </div>
+      </div>
+      <ul class="actions">
+         <li>
+            <%= f.submit "Submit",  class: "button special" %>
+         </li>
+      </ul>
+      <% end %>
+      <%= render "back" %>
+   </div>
+</section>

@@ -1,0 +1,9 @@
+<article class="justify preview">
+   <h4><%= post.title %></h4>
+   <%= markdown post.text.first(250) %>
+   <ul class="actions">
+      <li>
+         <%= link_to 'Voir le post', post, class: "button alt small" %>
+      </li>
+   </ul>
+</article>

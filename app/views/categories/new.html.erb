@@ -1,0 +1,25 @@
+<section id="new" class="wrapper style1">
+   <div class="inner">
+      <h2>New Category</h2>
+      <%= form_for :category, url: categories_path do |f| %>
+      <div class="row uniform 75%">
+         <div class="12u$">
+            <%= f.text_field :title, placeholder: "Enter the category title" %>
+         </div>
+         <div class="12u$">
+            <%= f.text_area :description, placeholder: "Enter the description", rows: 5 %>
+         </div>
+      </div>
+      <ul class="actions" style="text-align:center;">
+         <li>
+            <input id="newpostpart" type="button" value="Add post part" class="button special" onclick="toto()"/>
+         </li>
+      </ul>
+      <ul class="actions">
+         <li>
+            <%= f.submit "Submit",  class: "button special" %>
+         </li>
+      </ul>
+      <% end %>
+      <%= render "back" %>
+   </section>

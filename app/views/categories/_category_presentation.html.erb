@@ -1,0 +1,18 @@
+<article class="feature left justify">
+  <div class="content">
+    <h2><%= category.title %></h2>
+    <%= markdown category.description %>
+    <% if category.posts.any? %>
+    <% category.posts.each_with_index do |post, index| %>
+    <div class="inner">
+       <%= render "preview_post", post: post, index: index %>
+    </div>
+    <% end %>
+    <% end %>
+    <ul class="actions">
+       <li>
+          <%= link_to "En savoir plus", category, class:"button alt" %>
+       </li>
+    </ul>
+  </div>
+</article>

@@ -1,0 +1,11 @@
+<section id="article" class="wrapper style1">
+   <div class="inner">
+      <header class="major special">
+         <h2><%= @gallery.title %></h2>
+      </header>
+      <%= markdown @gallery.description %>
+   </div>
+   <% if @gallery.photos.any? %>
+   <%= render_gallery_for @gallery.photos, title: 'title' %>
+   <% end %>
+</section>

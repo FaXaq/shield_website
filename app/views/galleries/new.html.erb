@@ -1,0 +1,25 @@
+<section id="new" class="wrapper style1">
+   <div class="inner">
+      <h2>New Gallery</h2>
+      <%= render 'error_messages' %>
+      <%= form_for :gallery, url: galleries_path do |f| %>
+      <div class="row uniform 75%">
+         <div class="6u">
+            <%= f.text_field :title, placeholder: "Enter the title" %>
+         </div>
+         <div class="6u$">
+            <%= f.select :category_id, options_from_collection_for_select(Category.all, "id", "title"), placeholder:"Category" %>
+         </div>
+         <div class="12u$">
+            <%= f.text_area :description, placeholder: "Enter the description", rows: 5 %>
+         </div>
+      </div>
+      <ul class="actions">
+         <li>
+            <%= f.submit "Submit",  class: "button special" %>
+         </li>
+      </ul>
+      <% end %>
+      <%= render "back" %>
+   </div>
+</section>

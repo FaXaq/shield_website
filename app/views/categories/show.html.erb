@@ -1,0 +1,10 @@
+<section id="article" class="wrapper style1">
+   <div class="container justify">
+      <h2><%= markdown @category.title %></h2>
+      <%= markdown @category.description  %>
+      <% if is_admin? %>
+      <%= link_to 'Edit', edit_category_path, class: "button alt" %>
+      <% end %>
+      <%= render "back" %>
+   </div>
+</section>

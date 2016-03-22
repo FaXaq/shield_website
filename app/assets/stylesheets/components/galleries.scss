@@ -1,0 +1,25 @@
+.thumbnails {
+            list-style:none;
+            margin:50px;
+}
+
+.thumbnails>li{
+            display:inline-block;
+            vertical-align:middle;
+}
+
+.thumbnail>img{
+        padding:20px;
+        border:1px solid #c5c5c5;
+        background-color:transparent;
+}
+
+.thumbnail>img:focus{
+        background-color:white;
+        border:1px solid #3989B7;
+}
+
+.thumbnail>img:hover{
+        background-color:white;
+        border:1px solid #3989B7;
+}
