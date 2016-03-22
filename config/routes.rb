@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   # get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -13,6 +12,9 @@ Rails.application.routes.draw do
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
   resources :post_parts
+  resources :categories
+  resources :galleries
+  resources :photos
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

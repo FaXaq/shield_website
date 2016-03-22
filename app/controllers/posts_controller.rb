@@ -9,31 +9,40 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.search(params[:search])
+    if params[:search] != nil
+      @search_param = params[:search]
+    end
   end
 
   def show
-    @post = Post.find(params[:id])
+    current_user
+    post = Post.find(params[:id])
+    if post.published === true
+      @post = post
+    elsif @current_user.id === post.user.id
+      @post = post
+    end
   end
 
   def edit
     current_user
     @post = Post.find(params[:id])
-
-
-    if logged_in? && @current_user.id === @post.user.id
-
-    else
+    if !logged_in? || (!is_admin? && @current_user.id != @post.user.id)
       redirect_to @post
     end
   end
 
   def create
     current_user
+
     @post = Post.new(post_params)
     @post.user_id = @current_user.id
-    @post.save
-    redirect_to @post
+    if @post.save
+      redirect_to @post
+    else
+      render 'new'
+    end
   end
 
   def update
@@ -59,6 +68,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :text, :avatar)
+    params.require(:post).permit(:title, :text, :avatar, :published, :category_id)
   end
 end

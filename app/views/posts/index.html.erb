@@ -1,12 +1,18 @@
 <section id="one" class="wrapper style1">
-  <% @posts.each_with_index do |post, index| %>
-  <div class="inner">
-    <%= render "preview_post", post: post, index: index %>
-  </div>
+   <% if @posts.any? %>
+   <% @posts.each_with_index do |post, index| %>
+   <div class="inner">
+      <%= render "preview_post", post: post, index: index %>
+   </div>
   <% end %>
   <% if logged_in? %>
   <div class="inner" style="text-align:center;">
-    <%= link_to 'New', new_post_path, class: "button big special" %>
+     <%= link_to 'New', new_post_path, class: "button big special" %>
+  </div>
+  <% end %>
+  <% else %>
+  <div class="inner center">
+     <p>Nous n'avons rien trouvé :(</p>
   </div>
   <% end %>
 </section>

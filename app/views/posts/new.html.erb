@@ -1,29 +1,32 @@
 <section id="new" class="wrapper style1">
-  <div class="inner">
-    <h2>New Post</h2>
-    <%= form_for :post, url: posts_path do |f| %>
-    <div class="row uniform 75%">
-      <div class="12u$">
-        <%= f.file_field  :avatar, as: :file %>
+   <div class="inner">
+      <h2>New Post</h2>
+      <%= render 'error_messages' %>
+      <%= form_for :post, url: posts_path do |f| %>
+      <div class="row uniform 75%">
+         <div class="12u$">
+            <%= f.file_field  :avatar, as: :file %>
+         </div>
+         <div class="6u">
+            <%= f.text_field :title, placeholder: "Enter the title" %>
+         </div>
+         <div class="6u$">
+            <%= f.select :category_id, options_from_collection_for_select(Category.all, "id", "title"), placeholder:"Category" %>
+         </div>
+         <div class="12u$">
+            <%= f.text_area :text, placeholder: "Enter the article", rows: 5 %>
+         </div>
+         <div class="6u">
+            <%= f.check_box :published %>
+            <%= f.label :published, "Publish" %>
+         </div>
       </div>
-      <div class="12u$">
-        <%= f.text_field :title, placeholder: "Enter the title" %>
-      </div>
-      <div class="12u$">
-        <%= f.text_area :text, placeholder: "Enter the article", rows: 5 %>
-      </div>
-    </div>
-    <ul class="actions" style="text-align:center;">
-      <li>
-        <input id="newpostpart" type="button" value="Add post part" class="button special" onclick="toto()"/>
-      </li>
-    </ul>
-    <ul class="actions">
-      <li>
-        <%= f.submit "Submit",  class: "button special" %>
-      </li>
-    </ul>
-    <% end %>
-
-    <%= render "back" %>
+      <ul class="actions">
+         <li>
+            <%= f.submit "Submit",  class: "button special" %>
+         </li>
+      </ul>
+      <% end %>
+      <%= render "back" %>
+   </div>
 </section>

@@ -17,18 +17,25 @@
         </ul>
       </div>
       <hr>
-      <% end %>
+         <% end %>
       <div class="12u$">
         <%= f.file_field  :avatar, as: :file %>
       </div>
-      <div class="12u$">
+      <div class="6u 12u$(xsmall)">
         <%= f.label :title %>
         <%= f.text_field :title, placeholder: "Modify title here" %>
       </div>
-
+      <div class="6u$ 12u$(xsmall)">
+         <%= f.label :category_id %>
+         <%= f.select :category_id, options_from_collection_for_select(Category.all, "id", "title", @post.category_id), placeholder:"Category" %>
+      </div>
       <div class="12u$">
         <%= f.label :text %>
         <%= f.text_area :text, placeholder: "Modify text here", rows: 10%>
+      </div>
+      <div class="6u">
+         <%= f.check_box :published %>
+         <%= f.label :published, "Publish" %>
       </div>
     </div>
     <ul class="actions">

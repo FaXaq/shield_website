@@ -1,3 +1,10 @@
 <section id="banner" style="background-image:url('<%= image_path 'banner.png' %>');">
-  <i class="icon fa-book"></i>
+<header class="major special">
+   <%= image_tag @user.avatar.url(:medium), class: "img-circle" %>
+   <h2><%= @user.name %>
+   <% if @user.admin === true %>
+   <p class="icon fa-star" style="border:none;font-size:1em;"></p>
+   <% end %>
+   </h2>
+</header>
 </section>

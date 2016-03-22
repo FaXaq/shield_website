@@ -5,4 +5,7 @@
    <h1>Logged in as : <%= link_to @current_user.name, @current_user %></h1>
    <%= link_to "Log out", logout_path, method: :delete, class: "button special small" %>
    <% end %>
+   <%= form_tag posts_path, style:"display:inline-block;", method: :get do %>
+   <%= text_field_tag :search, params[:search], placeholder:"Rechercher"%>
+   <% end %>
 </header>

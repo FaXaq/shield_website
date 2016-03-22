@@ -11,10 +11,9 @@
          Force &#38; Honneur.
       </p>
    </div>
-   <div class="container justify" id="crew">
-      <h4>Le crew</h4>
-   </div>
-   <div class="container justify">
-      <%= link_to "Wanna see my .. blog ?", posts_path, class: "button special" %>
-   </div>
+   <% if @posts.any? %>
+   <% @posts.each_with_index do |post, index| %>
+      <%= render "presentation_post", post: post, index: index %>
+      <% end %>
+   <% end %>
 </section>

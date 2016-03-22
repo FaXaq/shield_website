@@ -41,6 +41,10 @@
       <div class="6u$ 12u$(xsmall)">
         <%= f.password_field :password_confirmation, placeholder: "Password confirmation" %>
       </div>
+      <div class="12u$">
+         <%= f.check_box :admin %>
+         <%= f.label :admin %>
+      </div>
     </div>
     <ul class="actions">
       <li>

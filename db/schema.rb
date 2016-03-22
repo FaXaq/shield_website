@@ -11,7 +11,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160309133700) do
+ActiveRecord::Schema.define(version: 20160317143409) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "galleries", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.integer  "category_id"
+    t.integer  "post_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "galleries", ["category_id"], name: "index_galleries_on_category_id"
+  add_index "galleries", ["post_id"], name: "index_galleries_on_post_id"
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.string   "alt"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "gallery_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
+
+  add_index "photos", ["gallery_id"], name: "index_photos_on_gallery_id"
 
   create_table "post_parts", force: :cascade do |t|
     t.string   "type"
@@ -34,8 +72,11 @@ ActiveRecord::Schema.define(version: 20160309133700) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer  "category_id"
+    t.boolean  "published"
   end
 
+  add_index "posts", ["category_id"], name: "index_posts_on_category_id"
   add_index "posts", ["created_at"], name: "index_posts_on_created_at"
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
@@ -51,6 +92,7 @@ ActiveRecord::Schema.define(version: 20160309133700) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.boolean  "admin"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

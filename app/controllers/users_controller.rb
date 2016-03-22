@@ -9,8 +9,14 @@ class UsersController < ApplicationController
   end
 
   def show
+    current_user
+
     @user = User.find(params[:id])
-    @user_posts = @user.posts
+    if logged_in? && @user.id === @current_user.id
+      @user_posts = @user.posts.last(5)
+    elsif
+      @user_posts = @user.posts.where(published: true).last(5)
+    end
   end
 
   def create
@@ -55,12 +61,12 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email, :firstname, :lastname,
                                  :password, :password_confirmation,
-                                 :avatar, :avatar_file_name)
+                                 :avatar, :avatar_file_name, :admin)
   end
 
   private
   def user_params_without_password
     params.require(:user).permit(:name, :email, :firstname, :lastname, :avatar,
-                                 :avatar_file_name)
+                                 :avatar_file_name, :admin)
   end
 end
