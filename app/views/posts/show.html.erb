@@ -1,6 +1,11 @@
 <section id="article" class="wrapper style1">
    <div class="container justify">
       <%= markdown @post.text  %>
+      <% if @post.galleries.any? %>
+      <% @post.galleries.each do |gallery| %>
+      <%= render "gallery", gallery: gallery %>
+      <% end %>
+      <% end %>
       <% if logged_in? && @current_user.id === @post.user.id %>
       <%= link_to 'Edit', edit_post_path, class: "button alt" %>
       <% end %>

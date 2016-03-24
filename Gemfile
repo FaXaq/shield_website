@@ -37,6 +37,8 @@ gem 'redcarpet'
 
 gem 'hermitage'
 
+gem "nested_form"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

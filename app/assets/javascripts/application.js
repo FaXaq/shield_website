@@ -17,4 +17,5 @@
 //= require libs/retrospect/skel
 //= require libs/retrospect/util
 //= require libs/retrospect/retrospect
+//= require jquery_nested_form
 //= require_tree .

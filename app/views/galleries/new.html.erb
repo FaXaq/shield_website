@@ -2,7 +2,7 @@
    <div class="inner">
       <h2>New Gallery</h2>
       <%= render 'error_messages' %>
-      <%= form_for :gallery, url: galleries_path do |f| %>
+      <%= nested_form_for @gallery, url: galleries_path do |f| %>
       <div class="row uniform 75%">
          <div class="6u">
             <%= f.text_field :title, placeholder: "Enter the title" %>
@@ -11,9 +11,37 @@
             <%= f.select :category_id, options_from_collection_for_select(Category.all, "id", "title"), placeholder:"Category" %>
          </div>
          <div class="12u$">
+            <%= f.select :post_id, options_from_collection_for_select(Post.all.where(published: true), "id", "title"), placeholder:"Category" %>
+         </div>
+         <div class="12u$">
             <%= f.text_area :description, placeholder: "Enter the description", rows: 5 %>
          </div>
       </div>
+      <%= f.fields_for :photos  do |photo_form| %>
+      <h2>Ajouter une photo à la gallerie</h2>
+      <div class="row uniform 75%">
+         <div class="12u$">
+            <%= photo_form.file_field :image, as: :file %>
+         </div>
+         <div class="6u">
+            <%= photo_form.text_field :title, placeholder: "Enter the title" %>
+         </div>
+         <div class="6u$">
+            <%= photo_form.text_field :alt, placeholder: "Enter the alternative text if image not available" %>
+         </div>
+         <div class="12u$">
+            <%= photo_form.text_area :description, placeholder: "Enter the description", rows: 5 %>
+         </div>
+      </div>
+      <ul class="actions">
+         <li>
+            <%= photo_form.link_to_remove "Remove this photo", class:"button alt" %>
+         </li>
+      </ul>
+      <% end %>
+      <hr/>
+      <%= f.link_to_add "Add a photo", :photos, class:"button special" %>
+      <hr/>
       <ul class="actions">
          <li>
             <%= f.submit "Submit",  class: "button special" %>

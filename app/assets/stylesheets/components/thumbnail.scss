@@ -2,19 +2,20 @@
 @import "require/size";
 
 .thumbnail {
-          display: inline-block;
-          text-align: center;
+           display:inline-block;
+           text-align: center;
 }
 
 a.thumbnail {
-            display: inline-block;
+            display:inline-block;
 }
 
 .thumbnail-title {
-                 display: inline-block;
+                 display:inline-block;
 }
 
 span.thumbnail-over-image{
+        display:inline-block;
         position: relative;
         margin-top:-60px;
 }

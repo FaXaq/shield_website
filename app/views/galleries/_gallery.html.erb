@@ -1,0 +1,14 @@
+<div class="inner">
+   <header class="major special">
+      <h2><%= gallery.title %></h2>
+   </header>
+   <%= markdown gallery.description %>
+   <% if gallery.photos.any? %>
+   <%= render_gallery_for gallery.photos, title: 'title' %>
+   <% end %>
+   <%= link_to "More", gallery, class:"button alt" %>
+   <% if logged_in? && (is_admin? || gallery.post.user_id.to_i === current_user.id) %>
+   <%= link_to "Edit", edit_gallery_path, class:"button special" %>
+   <% end %>
+   <hr/>
+</div>

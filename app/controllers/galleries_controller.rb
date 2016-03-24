@@ -1,6 +1,9 @@
 class GalleriesController < ApplicationController
   def index
-    @galleries = Gallery.last(5).reverse
+    @galleries = Gallery.search(params[:search_gallery])
+    if params[:search_gallery] != nil
+      @gallery_search_param = params[:search_gallery]
+    end
   end
 
   def new
@@ -17,6 +20,20 @@ class GalleriesController < ApplicationController
   end
 
   def edit
+    @gallery = Gallery.find(params[:id])
+  end
+
+  def update
+    @gallery = Gallery.find(params[:id])
+    if is_admin?
+      if @gallery.update(gallery_params)
+        redirect_to @gallery
+      else
+        render 'edit'
+      end
+    else
+      redirect_to @gallery
+    end
   end
 
   def show
@@ -25,6 +42,6 @@ class GalleriesController < ApplicationController
 
   private
   def gallery_params
-    params.require(:gallery).permit(:title, :description, :category_id)
+    params.require(:gallery).permit(:title, :description, :category_id, :post_id, photos_attributes: [:gallery_id, :id, :title, :description, :alt, :image, :_destroy])
   end
 end

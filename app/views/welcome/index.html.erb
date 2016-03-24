@@ -17,3 +17,16 @@
       <% end %>
    <% end %>
 </section>
+<section id="events" class="wrapper style4">
+   <div class="container justify" id="eventscalendar">
+      <h2 class="center">les événements</h2>
+      <iframe src="https://calendar.google.com/calendar/embed?title=SHiELD%20Tournament&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;height=600&amp;wkst=2&amp;hl=fr&amp;bgcolor=%23FFFFFF&amp;src=39hq85fe2f6epeer3dobs11hu0%40group.calendar.google.com&amp;color=%2323164E&amp;ctz=Europe%2FParis" style="border:solid 1px #777" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+   </div>
+   <div class="container justify" id="events">
+      <% if @events.any? %>
+      <% @events.each_with_index do |event, index| %>
+      <%= render "presentation_event", post: event, index: index %>
+      <% end %>
+      <% end %>
+   </div>
+</section>

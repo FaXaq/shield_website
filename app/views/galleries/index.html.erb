@@ -1,2 +1,8 @@
-<h1>Galleries#index</h1>
-<p>Find me in app/views/galleries/index.html.erb</p>
+<section id="article" class="wrapper style1">
+   <%= form_tag galleries_path, style:"padding:3em 5em;", method: :get do %>
+   <%= text_field_tag :search_gallery, params[:search_gallery], placeholder:"Rechercher une gallerie"%>
+   <% end %>
+   <% @galleries.each_with_index do |gallery, index| %>
+   <%= render "gallery", gallery: gallery %>
+   <% end %>
+</section>

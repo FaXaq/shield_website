@@ -2,7 +2,11 @@ class Post < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
 
-  has_many :post_part
+  has_many :post_parts
+  has_many :galleries
+
+  accepts_nested_attributes_for :galleries
+  accepts_nested_attributes_for :post_parts
 
   validates :title,
             presence: true,

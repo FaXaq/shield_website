@@ -8,10 +8,5 @@
             <%= markdown post.text %>
          </div>
       </article>
-      <% if post.galleries.any? %>
-      <% post.galleries.each do |gallery| %>
-      <%= render "gallery", gallery: gallery %>
-      <% end %>
-      <% end %>
    </div>
 </section>
