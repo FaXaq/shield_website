@@ -1,0 +1,14 @@
+<div class="row uniform 75%">
+  <% if @gallery.errors.any? %>
+  <div id="error_explanation" class="12u$">
+    <div class="danger">
+      The form contains <%= pluralize(@gallery.errors.count, "error") %>.
+    </div>
+    <ul class="danger">
+      <% @gallery.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+</div>

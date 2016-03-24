@@ -3,6 +3,7 @@
       <h2>New Gallery</h2>
       <%= render 'error_messages' %>
       <%= nested_form_for @gallery, url: galleries_path do |f| %>
+      <hr/>
       <div class="row uniform 75%">
          <div class="6u">
             <%= f.text_field :title, placeholder: "Enter the title" %>

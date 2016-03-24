@@ -8,7 +8,7 @@
    <% end %>
    <%= link_to "More", gallery, class:"button alt" %>
    <% if logged_in? && (is_admin? || gallery.post.user_id.to_i === current_user.id) %>
-   <%= link_to "Edit", edit_gallery_path, class:"button special" %>
+   <%= link_to "Edit", edit_gallery_path(gallery), class:"button special" %>
    <% end %>
    <hr/>
 </div>

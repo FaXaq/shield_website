@@ -1,8 +1,16 @@
 <section id="article" class="wrapper style1">
+   <% if @galleries.any? %>
    <%= form_tag galleries_path, style:"padding:3em 5em;", method: :get do %>
    <%= text_field_tag :search_gallery, params[:search_gallery], placeholder:"Rechercher une gallerie"%>
    <% end %>
    <% @galleries.each_with_index do |gallery, index| %>
    <%= render "gallery", gallery: gallery %>
+   <% end %>
+   <% else %>
+   <div class="inner">
+      <header class="major special">
+         <p> Rien à afficher :'(</p>
+      </header>
+   </div>
    <% end %>
 </section>

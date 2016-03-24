@@ -47,6 +47,9 @@
          <li>
             <%= f.submit "Submit",  class: "button special" %>
          </li>
+         <li>
+            <%= link_to 'Destroy', @gallery,  method: :delete, data: { confirm: 'Are you sure?' }, class: "button default" %>
+         </li>
       </ul>
       <% end %>
       <%= render "back" %>

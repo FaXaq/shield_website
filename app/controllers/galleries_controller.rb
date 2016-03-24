@@ -8,6 +8,9 @@ class GalleriesController < ApplicationController
 
   def new
     @gallery = Gallery.new
+    if !logged_in?
+      redirect_to root_url
+    end
   end
 
   def create
@@ -21,6 +24,9 @@ class GalleriesController < ApplicationController
 
   def edit
     @gallery = Gallery.find(params[:id])
+    if !(logged_in? && @gallery.post.user.id.to_i === current_user.id) && !is_admin?
+      redirect_to @gallery
+    end
   end
 
   def update
@@ -38,6 +44,12 @@ class GalleriesController < ApplicationController
 
   def show
     @gallery = Gallery.find(params[:id])
+  end
+
+  def destroy
+    @gallery = Gallery.find(params[:id])
+    @gallery.destroy
+    redirect_to galleries_path
   end
 
   private

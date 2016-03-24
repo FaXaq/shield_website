@@ -2,8 +2,8 @@
   <div class="content">
     <h2><%= category.title %></h2>
     <%= markdown category.description %>
-    <% if category.posts.any? %>
-    <% category.posts.each_with_index do |post, index| %>
+    <% if category.posts.where(published: true).any? %>
+    <% category.posts.where(published: true).each_with_index do |post, index| %>
     <div class="inner">
        <%= render "preview_post", post: post, index: index %>
     </div>
