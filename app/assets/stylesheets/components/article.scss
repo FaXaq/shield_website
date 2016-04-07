@@ -1,5 +1,25 @@
+@import "breakpoint";
+@import "require/size";
+
 .preview {
                 padding: 20px;
                 border: 1px solid #ddd;
                 margin: 20px 0px;
+}
+
+@include breakpoint($xsmall){
+    article {
+        font-size:200%;
+    }
+}
+
+@include breakpoint($small){
+    article {
+        font-size:150%;
+    }
+}
+@include breakpoint($medium){
+    article {
+        font-size:150%;
+    }
 }

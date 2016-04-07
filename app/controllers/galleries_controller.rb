@@ -7,10 +7,10 @@ class GalleriesController < ApplicationController
   end
 
   def new
-    @gallery = Gallery.new
     if !logged_in?
       redirect_to root_url
     end
+    @gallery = Gallery.new
   end
 
   def create

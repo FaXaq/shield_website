@@ -1,20 +1,25 @@
 <section id="resume" class="wrapper style1">
-   <div class="container justify" id="whoarewe">
-      <h2 class="center">à propos de l'association</h2>
-      <h1 class="center">faire s'ouvrir les gamers</h1>
-      <br/>
-      <h4>qui sommes nous ?</h4>
-      <p>
-         Le Shield est une association qui a pour but premier de rassembler une communauté de personnes autour d’une même passion qu’est le jeu vidéo. Cela passe par l’organisation d’activités liées à l’e-sport, telles que des tournois ou des sessions de streaming, mais aussi de pouvoir échanger sur le milieu du jeu vidéo afin d’accroître nos connaissances. Notre motivation première est de créer de l’interaction entre les personnes. Voilà pourquoi nous proposons des évènements sur tout type de plateforme et tout type de jeu. La compétition reste un aspect primordial de notre confrérie, tout en conservant un climat de joie et de bonne humeur. Notre projet est de faire des rencontres et partager notre passion avec de nombreux joueurs.
-      </p>
-      <p>
-         Force &#38; Honneur.
-      </p>
-   </div>
+   <section class="container style1 justify">
+      <div class="inner style1" id="whoarewe">
+         <header>
+            <h2 class="center">à propos de l'association</h2>
+            <h1 class="center">faire s'ouvrir les gamers</h1>
+         </header>
+         <article>
+            <h4>qui sommes nous ?</h4>
+            <p>
+               Le Shield est une association qui a pour but premier de rassembler une communauté de personnes autour d’une même passion qu’est le jeu vidéo. Cela passe par l’organisation d’activités liées à l’e-sport, telles que des tournois ou des sessions de streaming, mais aussi de pouvoir échanger sur le milieu du jeu vidéo afin d’accroître nos connaissances. Notre motivation première est de créer de l’interaction entre les personnes. Voilà pourquoi nous proposons des évènements sur tout type de plateforme et tout type de jeu. La compétition reste un aspect primordial de notre confrérie, tout en conservant un climat de joie et de bonne humeur. Notre projet est de faire des rencontres et partager notre passion avec de nombreux joueurs.
+            </p>
+            <p>
+               Force &#38; Honneur.
+            </p>
+         </article>
+      </div>
+   </section>
    <% if @posts.any? %>
    <% @posts.each_with_index do |post, index| %>
-      <%= render "presentation_post", post: post, index: index %>
-      <% end %>
+   <%= render "presentation_post", post: post, index: index %>
+   <% end %>
    <% end %>
 </section>
 <% if @importants %>
@@ -22,9 +27,9 @@
    <h2 class="center">Annonces importantes</h2>
    <% @importants.each_with_index do |important_post, index| %>
    <div class="container" id="<% important_post.title %>">
-      <%= render "presentation_post", post: important_post, index: index %>
-   </div>
-   <% end %>
+   <%= render "presentation_post", post: important_post, index: index %>
+</div>
+<% end %>
 </section>
 <% end %>
 <% if @gallery %>
