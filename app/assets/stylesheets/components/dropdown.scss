@@ -16,6 +16,10 @@
       padding:0px;
       margin:0px;
       vertical-align:middle;
+      > * {
+        line-height:inherit;
+        color:grey;
+      }
     }
     list-style:none;
     color:#82A4CC;

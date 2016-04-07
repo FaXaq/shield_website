@@ -1,15 +1,15 @@
 <!-- header -->
 <header id="header" class="skel-layers-fixed">
-   <h1><a href="/"><i class="icon fa-anchor"></i></a>
-   <% if logged_in? %>
-   Logged in as : <%= link_to @current_user.name, @current_user %></h1>
-   <%= link_to "Log out", logout_path, method: :delete, class: "button special small" %>
-   <% else %>
-   </h1>
-   <% end %>
+   <h1><a href="/"><i class="icon fa-anchor"></i></a></h1>
    <label id="menu_icon" for="menu_checkbox"><i class="icon fa-bars"></i></label>
    <input type="checkbox" id="menu_checkbox" style="display:none;" role="button" />
    <ul id="menu_content">
+      <% if logged_in? %>
+      <li>
+         <h1>Logged in as : <%= link_to @current_user.name, @current_user %>
+         <%= link_to "Log out", logout_path, method: :delete, class: "button special small" %></h1>
+      </li>
+      <% end %>
       <li><a href="/#resume" class="dropdown-item">Qui sommes nous</a></li>
       <li><a href="/#events" class="dropdown-item">Les événements</a></li>
       <li><%= link_to "Blog", posts_path, class:"dropdown-item" %></li>
