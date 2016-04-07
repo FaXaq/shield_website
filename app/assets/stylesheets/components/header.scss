@@ -20,6 +20,10 @@
     justify-content:space-around;
 }
 
+#search {
+    font-size:100%;
+}
+
 @include breakpoint($small) {
     #header {
         > h1 {
@@ -27,7 +31,7 @@
             left:0;
         }
         display:inline-block;
-        font-size:200%;
+        font-size:300%;
         line-height:2em;
         height:inherit !important;
     }
@@ -40,7 +44,7 @@
             position:fixed;
         }
         display:inline-block;
-        font-size:200%;
+        font-size:300%;
         line-height:2em;
         height:inherit !important;
     }
@@ -53,7 +57,7 @@
             position:fixed;
         }
         display:inline-block;
-        font-size:200%;
+        font-size:300%;
         line-height:2em;
         height:inherit !important;
     }

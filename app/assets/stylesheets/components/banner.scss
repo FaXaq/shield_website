@@ -17,5 +17,12 @@
 }
 
 #main_icon {
-           margin:0px auto;
+    margin:0px auto;
+}
+
+
+@include breakpoint($medium) {
+    #banner * {
+        zoom:2;
+    }
 }
