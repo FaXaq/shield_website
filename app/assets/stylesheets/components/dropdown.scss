@@ -25,7 +25,7 @@
     color:#82A4CC;
     width:100%;
     z-index: 1;
-    top:44px;
+    top:2em;
 }
 
 #menu_icon {
@@ -45,7 +45,6 @@
          #menu_content {
                        flex-direction:column;
                        background-color: #323E53;
-                       font-size:200%;
          }
 }
 
@@ -62,7 +61,6 @@
          #menu_content {
                        flex-direction:column;
                        background-color: #323E53;
-                       font-size:200%;
          }
 }
 
@@ -77,13 +75,8 @@
          }
 
          #menu_content {
-                       top:44px;
-                       padding: 0px;
-                       margin: 0px;
                        flex-direction:column;
-                       justify-content:space-around;
                        background-color: #323E53;
-                       font-size:200%;
          }
 }
 
