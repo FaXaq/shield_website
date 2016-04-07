@@ -1,3 +1,11 @@
 <section id="article" class="wrapper style1">
-   <%= render "gallery", gallery: @gallery %>
+   <div class="inner">
+      <%= markdown @gallery.description %>
+      <% if @gallery.photos.any? %>
+      <%= render_gallery_for @gallery.photos, title: 'title' %>
+      <% end %>
+      <% if logged_in? && (is_admin? || @gallery.post.user_id.to_i === current_user.id) %>
+      <hr/>
+      <% end %>
+   </div>
 </section>

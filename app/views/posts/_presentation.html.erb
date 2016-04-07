@@ -17,7 +17,7 @@
 <section id="banner" style="background-image:url('<%= @post.avatar.url %>')">
   <h2><%= @post.title %></h2>
   <span class="thumbnail">
-    <%= image_tag @post.user.avatar.url(:thumb), class: "img-circle bordered size50" %>
+    <%= image_tag @post.user.avatar.url(:thumb), class: "img-circle bordered" %>
     <h1><%= link_to @post.user.name, @post.user %></h1>
   </span>
   <h5> on
