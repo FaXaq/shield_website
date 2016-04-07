@@ -1,11 +1,23 @@
 <!-- header -->
-<header id="header" class="alt">
-   <h1><a href="/"><i class="icon fa-anchor"></i></a></h1>
+<header id="header" class="skel-layers-fixed">
+   <h1><a href="/"><i class="icon fa-anchor"></i></a>
    <% if logged_in? %>
-   <h1>Logged in as : <%= link_to @current_user.name, @current_user %></h1>
+   Logged in as : <%= link_to @current_user.name, @current_user %></h1>
    <%= link_to "Log out", logout_path, method: :delete, class: "button special small" %>
+   <% else %>
+   </h1>
    <% end %>
-   <%= form_tag posts_path, style:"display:inline-block;", method: :get do %>
-   <%= text_field_tag :search, params[:search], placeholder:"Rechercher"%>
-   <% end %>
+   <label id="menu_icon" for="menu_checkbox"><i class="icon fa-bars"></i></label>
+   <input type="checkbox" id="menu_checkbox" style="display:none;" role="button" />
+   <ul id="menu_content">
+      <li><a href="/#resume" class="dropdown-item">Qui sommes nous</a></li>
+      <li><a href="/#events" class="dropdown-item">Les événements</a></li>
+      <li><%= link_to "Blog", posts_path, class:"dropdown-item" %></li>
+      <li><%= link_to "Galleries", galleries_path, class:"dropdown-item" %></li>
+      <li>
+         <%= form_tag posts_path, style:"margin:10px;", method: :get do %>
+         <%= text_field_tag :search, params[:search], placeholder:"Rechercher", style:"height:inherit;"%>
+         <% end %>
+      </li>
+   </ul>
 </header>

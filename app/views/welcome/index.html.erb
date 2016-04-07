@@ -17,14 +17,24 @@
       <% end %>
    <% end %>
 </section>
-<section id="resume" class="wrapper style2">
+<% if @importants %>
+<section id="important" class="wrapper style2">
+   <h2 class="center">Annonces importantes</h2>
+   <% @importants.each_with_index do |important_post, index| %>
+   <div class="container" id="<% important_post.title %>">
+      <%= render "presentation_post", post: important_post, index: index %>
+   </div>
+   <% end %>
+</section>
+<% end %>
+<% if @gallery %>
+<section id="gallery" class="wrapper style1">
    <div class="container" id="lastgallery">
       <h2 class="center">Dernières photos</h2>
-      <% if @gallery %>
       <%= render "gallery", gallery: @gallery %>
-      <% end %>
    </div>
 </section>
+<% end %>
 <section id="events" class="wrapper style4">
    <div class="container justify" id="eventscalendar">
       <h2 class="center">les événements</h2>

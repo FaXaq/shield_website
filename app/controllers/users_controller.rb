@@ -11,7 +11,13 @@ class UsersController < ApplicationController
   def show
     current_user
 
-    @user = User.find(params[:id])
+    if User.exists?(params[:id])
+      @user = User.find(params[:id])
+    elsif User.exists?(name: params[:id])
+      @user = User.find_by(name: params[:id])
+    else
+      redirect_to root_url
+    end
     if logged_in? && @user.id === @current_user.id
       @user_posts = @user.posts.last(5)
     elsif

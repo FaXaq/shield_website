@@ -5,4 +5,17 @@
         background-size:cover;
         background-repeat:no-repeat;
         background-position:center;
+        height:100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+}
+
+#menu_icon {
+           color:white;
+           padding:0px 10px;
+}
+
+#main_icon {
+           margin:0px auto;
 }
