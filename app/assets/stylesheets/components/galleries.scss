@@ -10,22 +10,10 @@
 }
 
 .thumbnails>li{
-        border:1px solid #c5c5c5;
         background-color:transparent;
-        margin:20px;
         padding-left:0px;
 }
 
-.thumbnail>img{
-        padding:20px;
-}
-
-.thumbnails>li:focus{
-        background-color:white;
-        border:1px solid #3989B7;
-}
-
-.thumbnails>li:hover{
-        background-color:white;
-        border:1px solid #3989B7;
+ul.thumbnails {
+    padding:10px 0px!important;
 }

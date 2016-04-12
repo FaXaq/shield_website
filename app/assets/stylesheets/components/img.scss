@@ -1,23 +1,52 @@
+@import "breakpoint";
+@import "require/size";
+
 .img-circle {
-            border-radius: 50%;
+    border-radius: 50%;
 }
 
 img.bordered {
-              padding: 4px;
-              border: 1px solid #ddd;
-              background-color: #f7f7f7;
+    padding: 4px;
+    border: 1px solid #ddd;
+    background-color: #f7f7f7;
 }
 
 img.size50 {
-            height:50%;
-            width:50%;
+    height:50%;
+    width:50%;
 }
 
 img.height-max-50 {
-                  height:50%;
+    height:50%;
 }
 
 .image{
-        max-height:200px;
-        overflow:hidden;
+    max-height:200px;
+    overflow:hidden;
+}
+
+img.size-header{
+    max-heiht:100px;
+    max-width:100px;
+}
+
+@include breakpoint($medium){
+    img.size-header{
+        max-heiht:initial;
+        max-width:initial;
+    }
+}
+
+@include breakpoint($small){
+    img.size-header{
+        max-heiht:initial;
+        max-width:initial;
+    }
+}
+
+@include breakpoint($xsmall){
+    img.size-header{
+        max-heiht:initial;
+        max-width:initial;
+    }
 }

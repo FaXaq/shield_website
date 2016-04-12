@@ -2,24 +2,53 @@
 @import "require/size";
 
 .preview {
-                padding: 20px;
-                border: 1px solid #ddd;
-                margin: 20px 0px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    margin: 20px 0px;
 }
 
 @include breakpoint($xsmall){
     article {
+        font-size:0.5em;
+        line-height:2em;
+    }
+
+    .feature{
         font-size:2em;
+        line-height:1em;
+    }
+
+    .container{
+        font-size:2em;
+        line-height:1em;
     }
 }
 
 @include breakpoint($small){
     article {
+        font-size:0.5em;
+        line-height:2em;
+    }
+    .feature{
         font-size:2em;
+        line-height:1em;
+    }
+    .container{
+        font-size:2em;
+        line-height:1em;
     }
 }
 @include breakpoint($medium){
     article {
+        font-size:0.5em;
+        line-height:2em;
+    }
+    .feature{
         font-size:2em;
+        line-height:1em;
+    }
+    .container{
+        font-size:2em;
+        line-height:1em;
     }
 }

@@ -36,3 +36,23 @@
         width:50%;
     }
 }
+
+@include breakpoint($small) {
+    #banner * {
+        font-size:2em;
+    }
+    #banner img {
+        height:50%;
+        width:50%;
+    }
+}
+
+@include breakpoint($xsmall) {
+    #banner * {
+        font-size:2em;
+    }
+    #banner img {
+        height:50%;
+        width:50%;
+    }
+}
