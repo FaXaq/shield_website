@@ -13,13 +13,13 @@
     padding:0px;
     margin:0px;
     > * {
-      padding:0px;
-      margin:0px;
-      vertical-align:middle;
-      > * {
-        line-height:inherit;
-        color:grey;
-      }
+        padding:0px;
+        margin:0px;
+        vertical-align:middle;
+        > * {
+            line-height:inherit;
+            color:grey;
+        }
     }
     list-style:none;
     color:#82A4CC;
@@ -29,107 +29,107 @@
 }
 
 #menu_icon {
-           display:none;
+    display:none;
 }
 
 @include breakpoint($small) {
-         #menu_icon{
-                display:inline-block;
-                cursor:pointer;
-         }
+    #menu_icon{
+        display:inline-block;
+        cursor:pointer;
+    }
 
-         #menu_checkbox:checked ~ #menu_content{
-                                display:flex;
-         }
+    #menu_checkbox:checked ~ #menu_content{
+        display:flex;
+    }
 
-         #menu_content {
-                       flex-direction:column;
-                       background-color: #323E53;
-         }
+    #menu_content {
+        flex-direction:column;
+        background-color: #323E53;
+    }
 }
 
 @include breakpoint($xsmall) {
-         #menu_icon{
-                display:inline-block;
-                cursor:pointer;
-         }
+    #menu_icon{
+        display:inline-block;
+        cursor:pointer;
+    }
 
-         #menu_checkbox:checked ~ #menu_content{
-                                display:flex;
-         }
+    #menu_checkbox:checked ~ #menu_content{
+        display:flex;
+    }
 
-         #menu_content {
-                       flex-direction:column;
-                       background-color: #323E53;
-         }
+    #menu_content {
+        flex-direction:column;
+        background-color: #323E53;
+    }
 }
 
 @include breakpoint($medium) {
-         #menu_icon{
-                display:inline-block;
-                cursor:pointer;
-         }
+    #menu_icon{
+        display:inline-block;
+        cursor:pointer;
+    }
 
-         #menu_checkbox:checked ~ #menu_content{
-                                display:flex;
-         }
+    #menu_checkbox:checked ~ #menu_content{
+        display:flex;
+    }
 
-         #menu_content {
-                       flex-direction:column;
-                       background-color: #323E53;
-         }
+    #menu_content {
+        position:absolute;
+        flex-direction:column;
+        background-color: #323E53;
+    }
 }
 
 @include breakpoint($xlarge) {
-         #menu_content {
-                       position:initial;
-                       display:flex;
-                       list-style:none;
-                       flex-direction:row;
-                       justify-content:space-around;
-                       padding: 0px;
-                       margin: 0px;
-                       width:inherit;
-                       .dropdown-item {
-                                      padding:0px 20px;
-                                      height:100%;
-                       }
-         }
-         .dropdown-item {
-               color:#9d9d9d !important;
-         }
+    #menu_content {
+        position:initial;
+        display:flex;
+        list-style:none;
+        flex-direction:row;
+        justify-content:space-around;
+        padding: 0px;
+        margin: 0px;
+        width:inherit;
+        .dropdown-item {
+            padding:0px 20px;
+            height:100%;
+        }
+    }
+    .dropdown-item {
+        color:#9d9d9d !important;
+    }
 }
 
 @include breakpoint($large) {
-         #menu_content {
-                       position:initial;
-                       display:flex;
-                       list-style:none;
-                       flex-direction:row;
-                       justify-content:space-around;
-                       padding: 0px;
-                       margin: 0px;
-                       width:inherit;
-                       .dropdown-item {
-                                      padding:0px 20px;
-                                      height:100%;
-                       }
-         }
-         .dropdown-item {
-               color:#9d9d9d !important;
-         }
-}
+    #menu_content {
+        position:initial;
+        display:flex;
+        list-style:none;
+        flex-direction:row;
+        justify-content:space-around;
+        padding: 0px;
+        margin: 0px;
+        width:inherit;
+        .dropdown-item {
+            padding:0px 20px;
+            height:100%;
+        }
+    }
+    .dropdown-item {
+        color:#9d9d9d !important;
+    }
 
 
 .dropdown-item {
-               text-align:center;
-               width:100%;
-               height:100%;
-               padding:20px 0px;
-               display:block;
-               color:#9d9d9d !important;
+    text-align:center;
+    width:100%;
+    height:100%;
+    padding:20px 0px;
+    display:block;
+    color:#9d9d9d !important;
 }
 
 .dropdown-item:hover {
-                     background-color:#dedede;
+    background-color:#dedede;
 }

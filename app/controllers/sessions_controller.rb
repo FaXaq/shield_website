@@ -9,6 +9,11 @@ class SessionsController < ApplicationController
       log_in @user
       redirect_to posts_path
     else
+      if @user
+        flash[:danger] = "Bad password";
+      else
+        flash[:danger] = "No account found with this email";
+      end
       render 'new'
     end
   end

@@ -9,6 +9,12 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        .icon {
+            font-size:2em !important;
+        }
+        h1 {
+            line-height:2em;
+        }
 }
 
 #menu_icon {
@@ -23,6 +29,10 @@
 
 @include breakpoint($medium) {
     #banner * {
-        zoom:2;
+        font-size:2em;
+    }
+    #banner img {
+        height:50%;
+        width:50%;
     }
 }

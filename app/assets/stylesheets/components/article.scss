@@ -9,17 +9,17 @@
 
 @include breakpoint($xsmall){
     article {
-        font-size:200%;
+        font-size:2em;
     }
 }
 
 @include breakpoint($small){
     article {
-        font-size:150%;
+        font-size:2em;
     }
 }
 @include breakpoint($medium){
     article {
-        font-size:150%;
+        font-size:2em;
     }
 }
