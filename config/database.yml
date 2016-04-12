@@ -21,9 +21,9 @@ test:
   database: db/test.sqlite3
 
 production:
-adapter: postgresql
-encoding: unicode
-database: production_website_shield
-pool: 5
-username: <%= ENV["DATABASE_USERNAME"] %>
-password: <%= ENV["DATABASE_PASSWORD"] %>
+  adapter: postgresql
+  encoding: unicode
+  database: production_website_shield
+  pool: 5
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
