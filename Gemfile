@@ -39,6 +39,8 @@ gem 'hermitage'
 
 gem "nested_form"
 
+gem "pg"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
