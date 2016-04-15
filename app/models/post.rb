@@ -26,7 +26,7 @@ class Post < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where(published: true).where('title LIKE ?', "%#{search}%").reverse
+      where(published: true).where('title ILIKE ?', "%#{search}%").reverse
     else
       where(published: true).last(5).reverse
     end

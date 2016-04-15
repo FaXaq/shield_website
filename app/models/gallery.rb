@@ -21,7 +21,7 @@ class Gallery < ActiveRecord::Base
 
   def self.search(search)
     if search
-      where('title LIKE ?', "%#{search}%").reverse
+      where('title ILIKE ?', "%#{search}%").reverse
     else
       last(5).reverse
     end
