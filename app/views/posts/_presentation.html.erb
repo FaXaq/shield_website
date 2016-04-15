@@ -12,7 +12,7 @@
 <% end %>
 </section>
 <% else %>
-<section id="banner" style="background-image:url('<%= @post.avatar.url %>')">
+<section id="banner" style="background-image:url('<%= image_path @post.avatar.url %>')">
   <h2><%= @post.title %></h2>
   <span class="thumbnail">
     <%= image_tag @post.user.avatar.url(:medium), class: "img-circle bordered size-header" %>
