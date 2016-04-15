@@ -103,6 +103,7 @@ GEM
     passenger (5.0.26)
       rack
       rake (>= 0.8.1)
+    pg (0.18.4)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -187,6 +188,7 @@ DEPENDENCIES
   nested_form
   paperclip (~> 4.3)
   passenger (>= 5.0.25)
+  pg
   rails (= 4.2.5)
   redcarpet
   sass-rails (~> 5.0)

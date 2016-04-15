@@ -5,7 +5,6 @@
         background-size:cover;
         background-repeat:no-repeat;
         background-position:center;
-        height:100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -15,6 +14,10 @@
         h1 {
             line-height:2em;
         }
+}
+
+#banner.header-fill{
+        height:100vh;
 }
 
 #menu_icon {

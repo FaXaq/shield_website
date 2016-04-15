@@ -19,3 +19,26 @@
 .danger {
         color : red;
 }
+
+#banner #content {
+    opacity:0;
+    animation: fadein 1s ease-in;
+    animation-fill-mode:forwards;
+}
+
+section > * {
+    opacity:0;
+    animation: fadein 1s ease-in;
+    animation-fill-mode:forwards;
+}
+
+@keyframes fadein {
+    from {
+        margin-top:20px;
+        opacity: 0;
+    }
+    to   {
+        margin-top:0px;
+        opacity: 1;
+    }
+}

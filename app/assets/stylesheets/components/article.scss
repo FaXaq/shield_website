@@ -20,7 +20,7 @@
 
     .container{
         font-size:2em;
-        line-height:1em;
+        line-height:2em;
     }
 }
 
@@ -35,7 +35,7 @@
     }
     .container{
         font-size:2em;
-        line-height:1em;
+        line-height:2em;
     }
 }
 @include breakpoint($medium){
@@ -49,6 +49,6 @@
     }
     .container{
         font-size:2em;
-        line-height:1em;
+        line-height:2em;
     }
 }

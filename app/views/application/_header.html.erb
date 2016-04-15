@@ -10,10 +10,10 @@
          <%= link_to "Log out", logout_path, method: :delete, class: "button special small" %></h1>
       </li>
       <% end %>
-      <li><a href="/#resume" class="dropdown-item">Qui sommes nous</a></li>
-      <li><a href="/#events" class="dropdown-item">Les événements</a></li>
+      <li><%= link_to "Qui sommes nous ?", {:controller => "static", :action => "aboutus", :anchor => "us"}, class:"dropdown-item" %></li>
+      <li><%= link_to "Événements", {:controller => "static", :action => "events", :anchor => "calendar"}, class:"dropdown-item" %></li>
       <li><%= link_to "Blog", posts_path, class:"dropdown-item" %></li>
-      <li><%= link_to "Galeries", galleries_path, class:"dropdown-item" %></li>
+      <li><%= link_to "Galeries", galleries_path, class:"dropdown-item" %><r/li>
       <li>
          <%= form_tag posts_path, style:"margin:10px;", method: :get do %>
          <%= text_field_tag :search, params[:search], placeholder:"Rechercher", style:"height:inherit;"%>

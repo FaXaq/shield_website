@@ -1,10 +1,10 @@
-<div class="inner">
+<div class="container">
    <header class="major special">
       <h2><%= gallery.title %></h2>
    </header>
-   <%= markdown gallery.description %>
+   <%= markdown(gallery.description.first(250) + " ...") %>
    <% if gallery.photos.any? %>
-   <%= render_gallery_for gallery.photos, title: 'title' %>
+   <%= render_gallery_for gallery.photos.limit(4), title: 'title' %>
    <% end %>
    <%= link_to "More", gallery, class:"button alt" %>
    <% if logged_in? && (is_admin? || gallery.post.user_id.to_i === current_user.id) %>

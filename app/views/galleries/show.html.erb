@@ -1,11 +1,14 @@
 <section id="article" class="wrapper style1">
-   <div class="inner">
+   <div class="container">
       <%= markdown @gallery.description %>
       <% if @gallery.photos.any? %>
       <%= render_gallery_for @gallery.photos, title: 'title' %>
       <% end %>
-      <% if logged_in? && (is_admin? || @gallery.post.user_id.to_i === current_user.id) %>
-      <hr/>
-      <% end %>
+      <ul class="actions">
+         <% if logged_in? && (is_admin? || @gallery.post.user_id.to_i === current_user.id) %>
+         <%= link_to "Edit", edit_gallery_path(@gallery), class:"button special" %>
+         <% end %>
+      </ul>
+      <%= render "back" %>
    </div>
 </section>
