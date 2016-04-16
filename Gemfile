@@ -29,7 +29,7 @@ gem "paperclip", "~> 4.3"
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-#gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
+gem "passenger", ">= 5.0.25", require: "phusion_passenger/rack_handler"
 
 gem 'inline_svg'
 
