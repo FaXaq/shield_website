@@ -14,11 +14,8 @@ Rails.application.routes.draw do
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
-  resources :post_parts
   resources :categories
   resources :galleries
-  resources :photos
-  resources :account_activations, only: [:edit]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
