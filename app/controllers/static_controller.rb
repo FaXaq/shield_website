@@ -6,4 +6,7 @@ class StaticController < ApplicationController
 
   def events
   end
+
+  def tv
+  end
 end

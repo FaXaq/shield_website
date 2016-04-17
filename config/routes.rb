@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'aboutus' => 'static#aboutus'
   get 'events' => 'static#events'
+  get 'tv' => 'static#tv'
   resources :posts
   resources :users, only: [:edit, :show, :update]
   get    'login'   => 'sessions#new'
